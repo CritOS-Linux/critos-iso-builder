@@ -1,0 +1,8 @@
+runcmd dnf install -y git
+runcmd git clone https://github.com/CritOS-Linux/critos.git tmp/critos
+runcmd cp -v tmp/critos/files/system/usr/share/anaconda/pixmaps/fedora.css usr/share/anaconda/pixmaps/
+runcmd cp -v tmp/critos/files/system/usr/share/anaconda/pixmaps/anacoda_header.png usr/share/anaconda/pixmaps/
+runcmd cp -v tmp/critos/files/system/usr/share/anaconda/pixmaps/sidebar-bg.png usr/share/anaconda/pixmaps/
+runcmd cp -v tmp/critos/files/system/usr/share/anaconda/pixmaps/sidebar-logo.png usr/share/anaconda/pixmaps/
+runcmd cp -v tmp/critos/files/system/usr/share/anaconda/pixmaps/topbar-bg.png usr/share/anaconda/pixmaps/
+runcmd rm -rf tmp/critos
