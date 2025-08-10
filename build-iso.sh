@@ -9,7 +9,9 @@ WORKSPACE=$(pwd)
 OUTPUT_DIR="${WORKSPACE}/output"
 TEMPLATE_DIR="${WORKSPACE}/installer/lorax_templates"
 
-wget -O ${WORKSPACE}/critos.repo https://raw.githubusercontent.com/CritOS-Linux/critos/refs/heads/main/files/rpm-ostree/critos.repo
+
+echo "Downloading CritOS Repo..."
+wget -O ${WORKSPACE}/critos.repo https://copr.fedorainfracloud.org/coprs/g/critos-org/critos/repo/fedora-42/group_critos-org-critos-fedora-42.repo
 
 # Tworzymy katalogi jeśli nie istnieją
 mkdir -p "$OUTPUT_DIR"
@@ -31,7 +33,7 @@ for IMAGE in "${IMAGES[@]}"; do
     IMAGE_TAG="latest" \
     ISO_NAME="build/${IMAGE}.iso" \
     VARIANT="Kinoite" \
-    VERSION="41" \
+    VERSION="42" \
     REPOS="${WORKSPACE}/critos.repo /etc/yum.repos.d/fedora.repo /etc/yum.repos.d/fedora-updates.repo"
 
 done
